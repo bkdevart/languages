@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// ... creates variadic parameter
+func printNums(items: Int...)
+{
+    for item in items {
+        print (item)
+    }
+}
+// parameters not needed if variadic
+printNums() // no output
+printNums(items: 1, 2) // argument label needed
+
+// nil argument label _
+func printExp(_ items: Float...) {
+    for item in items {
+        print (item)
+    }
+}
+printExp() // no output
+printExp(1.2, 2.3) // no argument label needed
+
+// passing a string array
+func shoppingList(items: [String]) {
+    for item in items {
+        print(item)
+    }
+}
+shoppingList(items: ["milk", "eggs"])
+/*
+ - zero or more parameters of the specified type are converted to an array while inside the function
+ - functions can only have at most one variadic parameter.  This is invalid:
+ func shoppingList(items: String..., prices: Float...)
+ - a workaroud is to pass a struct of items which contains multiple types as a variadic parameter
+ */
+struct Items {
+    var item: String
+    var price: Float
+}
+
+func shoppingList(items: [Items]) {
+    for item in items {
+        print(item.item, item.price)
+    }
+}
+
+shoppingList(items: [Items(item: "milk", 
+                           price: 1.0), 
+                     Items(item: "eggs", 
+                           price: 1.4)])
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1237}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

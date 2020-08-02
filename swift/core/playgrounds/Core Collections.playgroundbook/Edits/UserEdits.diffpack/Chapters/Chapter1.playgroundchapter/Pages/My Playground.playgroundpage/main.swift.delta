@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Swift 5.2
+ - 3 collection types - arrays, sets, and dictionaries
+ - make mutable or immutable using var or let, respectively
+ - use immutable by default when starting to gain performance, change if needed
+ */
+ 
+// TODO create print function for arrays
+func arrayInfo(_ thisArray: Array&lt;Int&gt;) -&gt; String {
+    return "Array is of type \(type(of: thisArray)) with \(thisArray.count) items: \(thisArray)."
+}
+
+func arrayInfo(_ thisArray: Array&lt;Double&gt;) -&gt; String {
+    return "Array is of type \(type(of: thisArray)) with \(thisArray.count) items: \(thisArray)."
+}
+
+func arrayInfo(_ thisArray: Array&lt;String&gt;) -&gt; String {
+    return "Array is of type \(type(of: thisArray)) with \(thisArray.count) items: \(thisArray)."
+}
+/*
+Arrays
+ - Values are of same type, and values can repeat
+ */
+var someInts = [Int]()
+print(arrayInfo(someInts))
+
+someInts.append(3)
+print(arrayInfo(someInts))
+
+// if you have already used the variable or it is a typed parameter, you don't need to specify datatype
+someInts = []
+print(arrayInfo(someInts))
+
+// create an array with every entry being the same
+var threeDoubles = Array(repeating: 0.0, count: 3)
+print(arrayInfo(threeDoubles))
+
+// adding arrays together, type is inferred in new array
+var anotherThreeDoubles = Array(repeating: 2.5, count: 3)
+var sixDoubles = threeDoubles + anotherThreeDoubles
+print(arrayInfo(sixDoubles))
+
+// array literals can be used write one or more values
+// type inferance removes need to specify [String].  Both these are the same:
+// var shoppingList: [String] = ["Eggs", "Milk"]
+var shoppingList = ["Eggs", "Milk"]
+
+// array functions
+shoppingList.count
+shoppingList.isEmpty
+// functions adding items 
+shoppingList.append("Flour")
+shoppingList += ["Baking Powder"]
+shoppingList += ["Chocolate Spread", "Cheese", "Butter"]
+shoppingList[0]
+shoppingList[0] = "Six eggs"
+print(arrayInfo(shoppingList))
+// can change a range of values at once
+shoppingList[4...6] = ["Bananas", "Apples"]
+print(arrayInfo(shoppingList))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1975}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
