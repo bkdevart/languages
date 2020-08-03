@@ -1,5 +1,5 @@
 # languages
-Code used to explore and learn different programming languages
+Code used to explore different programming languages
 
 ## Current focus:
  * Python
